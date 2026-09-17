@@ -1,0 +1,443 @@
+/* ============================================
+   إعادة تعيين الأنماط الافتراضية للصفحة
+   ============================================ */
+* {
+    margin: 0;          /* إزالة الهوامش الافتراضية */
+    padding: 0;         /* إزالة الحشو الافتراضي */
+    box-sizing: border-box; /* حساب الحجم الكلي مع الحشو والإطار */
+}
+
+/* ============================================
+   styles للجسم الرئيسي مع الحفاظ على الخلفية
+   ============================================ */
+body {
+    background-image: url("image.png");   /* صورة الخلفية الأصلية */
+    background-size: 100% 100%;           /* تغطية الخلفية بالكامل */
+    background-position: center;          /* توسيط الصورة */
+    background-repeat: no-repeat;         /* منع تكرار الصورة */
+    background-attachment: fixed;         /* ثبات الصورة عند التمرير */
+    background-color: #121212;            /* لون الخلفية الاحتياطي */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* خط النصوص */
+    color: #ffffff;                       /* لون النص الأساسي أبيض */
+    line-height: 1.6;                     /* ارتفاع السطر للقراءة */
+    min-height: 100vh;                    /* ارتفاع أدنى مساوٍ للشاشة */
+    margin: 0;                            /* إزالة الهوامش */
+}
+
+/* ============================================
+   شريط التنقل Navbar
+   ============================================ */
+.navbar {
+    position: fixed;            /* تثبيت الشريط في أعلى الصفحة */
+    top: 0;                     /* محاذاة من الأعلى */
+    left: 0;                    /* محاذاة من اليسار */
+    right: 0;                   /* محاذاة من اليمين */
+    display: flex;              /* عرض العناصر بشكل مرن */
+    justify-content: space-between; /* توزيع المسافات بين العناصر */
+    align-items: center;        /* توسيط العناصر عمودياً */
+    padding: 1rem 2rem;         /* حشو داخلي */
+    background-color: rgba(0, 0, 0, 0.7); /* خلفية شفافة داكنة */
+    backdrop-filter: blur(10px); /* تأثير ضبابية على الخلفية */
+    z-index: 1000;              /* طبقة عالية فوق العناصر */
+}
+
+/* شعار الموقع */
+.navbar .logo {
+    font-size: 1.8rem;         /* حجم الخط */
+    font-weight: bold;         /* خط عريض */
+    color: #00d4ff;            /* لون أزرق سماوي */
+}
+
+/* قائمة الروابط */
+.nav-links {
+    display: flex;             /* عرض الروابط بشكل مرن */
+    list-style: none;          /* إزالة النقاط من القائمة */
+    gap: 2rem;                 /* مسافة بين الروابط */
+}
+
+/* كل رابط في القائمة */
+.nav-links a {
+    text-decoration: none;     /* إزالة الخط السفلي */
+    color: #ffffff;            /* لون النص أبيض */
+    font-size: 1rem;           /* حجم الخط */
+    transition: color 0.3s;   /* تأثير انتقالي عند التمرير */
+}
+
+/* تغيير لون الرابط عند التمرير */
+.nav-links a:hover {
+    color: #00d4ff;            /* لون أزرق سماوي عند التمرير */
+}
+
+/* الرابط النشط في الصفحة الحالية */
+.nav-links a.active {
+    color: #00d4ff;            /* لون أزرق سماوي للصفحة الحالية */
+    border-bottom: 2px solid #00d4ff; /* خط سفلي تحت الرابط */
+}
+
+/* ============================================
+   قسم الصفحة الفرعية
+   ============================================ */
+.page-section {
+    padding: 8rem 2rem 4rem;    /* حشو علوي أكبر لل_space تحت NavBar */
+    text-align: center;         /* توسيط المحتوى */
+    max-width: 900px;           /* عرض أقصى */
+    margin: 0 auto;             /* توسيط القسم أفقياً */
+}
+
+/* عنوان القسم في الصفحة الفرعية */
+.page-section h2 {
+    font-size: 2.2rem;         /* حجم الخط */
+    margin-bottom: 1.5rem;     /* مسافة أسفل العنوان */
+    color: #00d4ff;            /* لون أزرق سماوي */
+}
+
+/* فقرة النص في الصفحة الفرعية */
+.page-section p {
+    font-size: 1.1rem;         /* حجم الخط */
+    color: #e0e0e0;            /* لون رمادي فاتح */
+    line-height: 1.8;          /* ارتفاع سطر مريح */
+    max-width: 700px;          /* عرض أقصى للنص */
+    margin: 0 auto;            /* توسيط الفقرة */
+}
+
+/* ============================================
+   القسم الرئيسي Hero Section
+   ============================================ */
+.hero {
+    display: flex;              /* عرض المحتوى بشكل مرن */
+    flex-direction: column;     /* ترتيب العناصر عمودياً */
+    justify-content: center;    /* توسيط المحتوى عمودياً */
+    align-items: center;        /* توسيط المحتوى أفقياً */
+    min-height: 100vh;          /* ملء الشاشة بالكامل */
+    text-align: center;         /* توسيط النص */
+    padding: 2rem;              /* حشو داخلي */
+}
+
+/* العنوان الرئيسي */
+.hero h1 {
+    font-size: 3rem;           /* حجم كبير للعنوان */
+    margin-bottom: 1rem;       /* مسافة أسفل العنوان */
+    color: #ffffff;            /* لون أبيض */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* ظل للنص لوضوحه */
+}
+
+/* الوصف المختصر */
+.hero p {
+    font-size: 1.3rem;         /* حجم الخط */
+    color: #cccccc;            /* لون رمادي فاتح */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* ظل خفيف */
+}
+
+/* ============================================
+   قسم نبذة عني About
+   ============================================ */
+.about {
+    padding: 4rem 2rem;        /* حشو داخلي */
+    text-align: center;        /* توسيط النص */
+    max-width: 800px;          /* عرض أقصى */
+    margin: 0 auto;            /* توسيط القسم */
+}
+
+/* عنوان القسم */
+.about h2 {
+    font-size: 2rem;           /* حجم الخط */
+    margin-bottom: 1.5rem;     /* مسافة أسفل العنوان */
+    color: #00d4ff;            /* لون أزرق سماوي */
+}
+
+/* فقرة النبذة */
+.about p {
+    font-size: 1.1rem;         /* حجم الخط */
+    color: #e0e0e0;            /* لون رمادي فاتح */
+    line-height: 1.8;          /* ارتفاع سطر مريح للقراءة */
+}
+
+/* ============================================
+   قسم المهارات Skills
+   ============================================ */
+.skills {
+    padding: 4rem 2rem;        /* حشو داخلي */
+    text-align: center;        /* توسيط المحتوى */
+}
+
+/* عنوان القسم */
+.skills h2 {
+    font-size: 2rem;           /* حجم الخط */
+    margin-bottom: 2rem;       /* مسافة أسفل العنوان */
+    color: #00d4ff;            /* لون أزرق سماوي */
+}
+
+/* حاوية المهارات */
+.skills-container {
+    display: flex;             /* عرض المهارات بشكل مرن */
+    justify-content: center;   /* توسيط المهارات */
+    gap: 2rem;                 /* مسافة بين المهارات */
+    flex-wrap: wrap;           /* لف العناصر في الشاشات الصغيرة */
+}
+
+/* عنصر المهارة الواحد */
+.skill-item {
+    background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة داكنة */
+    padding: 1.5rem 2rem;     /* حشو داخلي */
+    border-radius: 10px;       /* زوايا دائرية */
+    min-width: 150px;          /* عرض أدنى */
+    transition: transform 0.3s; /* تأثير انتقالي */
+}
+
+/* تأثير عند التمرير على المهارة */
+.skill-item:hover {
+    transform: translateY(-5px); /* رفع العنصر قليلاً */
+}
+
+/* أيقونة المهارة */
+.skill-item i {
+    font-size: 2.5rem;        /* حجم الأيقونة */
+    color: #00d4ff;           /* لون أزرق سماوي */
+    margin-bottom: 0.5rem;    /* مسافة أسفل الأيقونة */
+    display: block;           /* عرض كعنصر منفصل */
+}
+
+/* اسم المهارة */
+.skill-item span {
+    font-size: 1rem;          /* حجم الخط */
+    color: #ffffff;           /* لون أبيض */
+    display: block;           /* عرض كعنصر منفصل */
+    margin-bottom: 0.5rem;    /* مسافة أسفل الاسم */
+}
+
+/* شريط التقدم */
+.skill-bar {
+    width: 100%;              /* عرض كامل */
+    height: 6px;              /* ارتفاع الشريط */
+    background-color: rgba(255, 255, 255, 0.2); /* لون خلفية الشريط */
+    border-radius: 3px;       /* زوايا دائرية */
+    overflow: hidden;          /* إخفاء الجزء الزائد */
+}
+
+/* الجزء الممتلئ من شريط التقدم */
+.skill-fill {
+    height: 100%;             /* ملء الارتفاع بالكامل */
+    background-color: #00d4ff; /* لون أزرق سماوي */
+    border-radius: 3px;       /* زوايا دائرية */
+}
+
+/* ============================================
+   قسم المشاريع Projects
+   ============================================ */
+.projects {
+    padding: 4rem 2rem;        /* حشو داخلي */
+    text-align: center;        /* توسيط المحتوى */
+}
+
+/* عنوان القسم */
+.projects h2 {
+    font-size: 2rem;           /* حجم الخط */
+    margin-bottom: 2rem;       /* مسافة أسفل العنوان */
+    color: #00d4ff;            /* لون أزرق سماوي */
+}
+
+/* حاوية المشاريع */
+.projects-container {
+    display: flex;             /* عرض المشاريع بشكل مرن */
+    justify-content: center;   /* توسيط المشاريع */
+    gap: 2rem;                 /* مسافة بين المشاريع */
+    flex-wrap: wrap;           /* لف العناصر في الشاشات الصغيرة */
+}
+
+/* بطاقة المشروع */
+.project-card {
+    background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة داكنة */
+    padding: 2rem;             /* حشو داخلي */
+    border-radius: 15px;       /* زوايا دائرية */
+    max-width: 350px;          /* عرض أقصى للبطاقة */
+    transition: transform 0.3s; /* تأثير انتقالي */
+}
+
+/* تأثير عند التمرير على البطاقة */
+.project-card:hover {
+    transform: translateY(-5px); /* رفع البطاقة قليلاً */
+}
+
+/* عنوان المشروع */
+.project-card h3 {
+    font-size: 1.3rem;        /* حجم الخط */
+    color: #ffffff;           /* لون أبيض */
+    margin-bottom: 0.8rem;    /* مسافة أسفل العنوان */
+}
+
+/* وصف المشروع */
+.project-card p {
+    font-size: 0.95rem;       /* حجم الخط */
+    color: #cccccc;           /* لون رمادي فاتح */
+    margin-bottom: 1rem;      /* مسافة أسفل الوصف */
+}
+
+/* التقنيات المستخدمة في المشروع */
+.project-tech {
+    font-size: 0.8rem;        /* حجم الخط */
+    color: #00d4ff;           /* لون أزرق سماوي */
+    margin-bottom: 1.2rem;    /* مسافة أسفل التقنيات */
+    padding: 0.3rem 0.6rem;   /* حشو داخلي */
+    background-color: rgba(0, 212, 255, 0.1); /* خلفية شفافة */
+    border-radius: 5px;       /* زوايا دائرية */
+    display: inline-block;    /* عرض كعنصر منفصل */
+}
+
+/* زر عرض المشروع */
+.btn {
+    display: inline-block;    /* عرض كزر */
+    padding: 0.6rem 1.5rem;   /* حشو داخلي */
+    background-color: #00d4ff; /* لون خلفية الزر */
+    color: #000000;           /* لون النص أسود */
+    text-decoration: none;     /* إزالة الخط السفلي */
+    border-radius: 8px;       /* زوايا دائرية */
+    font-weight: bold;        /* خط عريض */
+    transition: background-color 0.3s; /* تأثير انتقالي */
+}
+
+/* تغيير لون الزر عند التمرير */
+.btn:hover {
+    background-color: #00b8d9; /* لون أزرق أغمق قليلاً */
+}
+
+/* ============================================
+   قسم التواصل Contact
+   ============================================ */
+.contact {
+    padding: 4rem 2rem;        /* حشو داخلي */
+    text-align: center;        /* توسيط المحتوى */
+}
+
+/* عنوان القسم */
+.contact h2 {
+    font-size: 2rem;           /* حجم الخط */
+    margin-bottom: 2rem;       /* مسافة أسفل العنوان */
+    color: #00d4ff;            /* لون أزرق سماوي */
+}
+
+/* حاوية أيقونات التواصل */
+.social-links {
+    display: flex;             /* عرض الأيقونات بشكل مرن */
+    justify-content: center;   /* توسيط الأيقونات */
+    gap: 1.5rem;               /* مسافة بين الأيقونات */
+    flex-wrap: wrap;           /* لف في الشاشات الصغيرة */
+}
+
+/* الأيقونة الواحدة */
+.social-icon {
+    display: flex;             /* عرض مرن للتوسيط */
+    justify-content: center;   /* توسيط أفقي */
+    align-items: center;       /* توسيط عمودي */
+    width: 55px;               /* عرض الأيقونة */
+    height: 55px;              /* ارتفاع الأيقونة */
+    background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة داكنة */
+    border-radius: 50%;        /* شكل دائري */
+    color: #ffffff;            /* لون الأيقونة أبيض */
+    font-size: 1.5rem;         /* حجم الأيقونة */
+    text-decoration: none;      /* إزالة الخط السفلي */
+    transition: all 0.3s;      /* تأثير انتقالي */
+}
+
+/* تغيير الأيقونة عند التمرير */
+.social-icon:hover {
+    background-color: #00d4ff; /* لون خلفية أزرق سماوي */
+    color: #000000;            /* لون الأيقونة أسود */
+    transform: scale(1.1);     /* تكبير خفيف */
+}
+
+/* ============================================
+   قسم دعوة للتواصل Call to Action
+   ============================================ */
+.cta {
+    padding: 5rem 2rem;        /* حشو داخلي */
+    text-align: center;        /* توسيط المحتوى */
+    max-width: 700px;          /* عرض أقصى */
+    margin: 0 auto;            /* توسيط القسم */
+}
+
+.cta h2 {
+    font-size: 2.5rem;         /* حجم العنوان */
+    font-weight: bold;         /* خط عريض */
+    color: #ffffff;            /* لون أبيض */
+    margin-bottom: 1rem;       /* مسافة أسفل العنوان */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* ظل للنص */
+}
+
+.cta p {
+    font-size: 1.15rem;        /* حجم الخط */
+    color: #cccccc;            /* لون رمادي فاتح */
+    margin-bottom: 2rem;       /* مسافة أسفل النص */
+    line-height: 1.8;          /* ارتفاع سطر مريح */
+}
+
+/* ============================================
+   نموذج التواصل Contact Form
+   ============================================ */
+.contact-form {
+    max-width: 500px;          /* عرض أقصى للنموذج */
+    margin: 3rem auto 0;       /* توسيط مع مسافة علوية */
+    padding: 2rem;             /* حشو داخلي */
+    background-color: rgba(0, 0, 0, 0.4); /* خلفية شفافة داكنة */
+    border-radius: 15px;       /* زوايا دائرية */
+}
+
+/* نص الترحيب فوق النموذج */
+.form-intro {
+    font-size: 1.1rem;         /* حجم الخط */
+    color: #cccccc;            /* لون رمادي فاتح */
+    text-align: center;        /* توسيط النص */
+    margin-top: 2rem;          /* مسافة علوية */
+    margin-bottom: 0;          /* مسافة سفلية */
+}
+
+.form-group {
+    margin-bottom: 1.2rem;     /* مسافة بين الحقول */
+}
+
+.form-group label {
+    display: block;            /* عرض كعنصر منفصل */
+    margin-bottom: 0.4rem;     /* مسافة أسفل العنوان */
+    font-size: 0.95rem;        /* حجم الخط */
+    color: #cccccc;            /* لون رمادي فاتح */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;               /* عرض كامل */
+    padding: 0.7rem 1rem;     /* حشو داخلي */
+    background-color: rgba(255, 255, 255, 0.1); /* خلفية شفافة */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* إطار خفيف */
+    border-radius: 8px;        /* زوايا دائرية */
+    color: #ffffff;            /* لون النص أبيض */
+    font-size: 1rem;           /* حجم الخط */
+    font-family: inherit;      /* وراثة الخط من الصفحة */
+    resize: vertical;          /* السماح بالتغيير العمودي فقط */
+    transition: border-color 0.3s; /* تأثير انتقالي */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;              /* إزالة الإطار الافتراضي */
+    border-color: #00d4ff;     /* لون أزرق سماوي عند التركيز */
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #888888;            /* لون النص التوضيحي */
+}
+
+/* ============================================
+   الطابع الشخصي Footer
+   ============================================ */
+.footer {
+    text-align: center;        /* توسيط النص */
+    padding: 2rem;             /* حشو داخلي */
+    margin-top: 3rem;          /* مسافة علوية */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* خط فاصل علوي */
+    background-color: rgba(0, 0, 0, 0.3); /* خلفية شفافة */
+}
+
+.footer p {
+    font-size: 0.9rem;         /* حجم الخط */
+    color: #aaaaaa;            /* لون رمادي فاتح */
+}

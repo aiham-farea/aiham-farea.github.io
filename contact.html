@@ -1,0 +1,94 @@
+<!DOCTYPE html> <!-- تعريف مستند HTML5 -->
+<html lang="ar" dir="rtl"> <!-- اللغة العربية مع الاتجاه من اليمين ليسار -->
+<head>
+    <meta charset="UTF-8"> <!-- ترميز الأحرف -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- التجاوب -->
+    <title>Aiham Farea | التواصل</title> <!-- عنوان الصفحة -->
+    <link rel="stylesheet" href="style.css"> <!-- ربط ملف التنسيق -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- أيقونات Font Awesome -->
+</head>
+<body>
+
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Aiham</a> <!-- الشعار -->
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li> <!-- الرئيسية -->
+            <li><a href="about.html">نبذة عني</a></li> <!-- نبذة عني -->
+            <li><a href="skills.html">المهارات</a></li> <!-- المهارات -->
+            <li><a href="projects.html">المشاريع</a></li> <!-- المشاريع -->
+            <li><a href="contact.html" class="active">التواصل</a></li> <!-- التواصل -->
+        </ul>
+    </nav>
+
+    <!-- قسم التواصل -->
+    <section class="page-section">
+        <h2>التواصل معي</h2> <!-- عنوان القسم -->
+        <div class="social-links">
+            <!-- واتساب -->
+            <a href="https://wa.me/967773489181" target="_blank" class="social-icon" title="واتساب">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <!-- هاتف/اتصال -->
+            <a href="tel:+967773489181" class="social-icon" title="الاتصال">
+                <i class="fas fa-phone-alt"></i>
+            </a>
+            <!-- إنستغرام -->
+            <a href="https://www.instagram.com/o_o.10q?stkn=MWtlczBkdWh3amZ5dQ==" target="_blank" class="social-icon" title="إنستغرام">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <!-- فيسبوك -->
+            <a href="https://www.facebook.com/profile.php?id=61558431017366&mibextid=ZbWKwL" target="_blank" class="social-icon" title="فيسبوك">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <!-- جيت هب -->
+            <a href="https://github.com/aiham-farea" target="_blank" class="social-icon" title="جيت هب">
+                <i class="fab fa-github"></i>
+            </a>
+            <!-- جيميل -->
+            <a href="mailto:aihamfara0@gmail.com" class="social-icon" title="جيميل">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+
+        <!-- نص الترحيب فوق النموذج -->
+        <p class="form-intro">لديك سؤال او فكرة أو تريد فقط إلقاء التحية؟ أرسل رسالة</p>
+
+        <!-- نموذج التواصل -->
+        <form class="contact-form">
+            <!-- حقل الاسم -->
+            <div class="form-group">
+                <label for="name">الاسم</label>
+                <input type="text" id="name" placeholder="اسمك" required>
+            </div>
+
+            <!-- حقل البريد الإلكتروني -->
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" placeholder="بريدك الالكتروني" required>
+            </div>
+
+            <!-- حقل الموضوع -->
+            <div class="form-group">
+                <label for="subject">الموضوع</label>
+                <input type="text" id="subject" placeholder="موضوع الرساله" required>
+            </div>
+
+            <!-- حقل الرسالة -->
+            <div class="form-group">
+                <label for="message">الرسالة</label>
+                <textarea id="message" rows="5" placeholder="اكتب رسالتك" required></textarea>
+            </div>
+
+            <!-- زر الإرسال -->
+            <button type="submit" class="btn">إرسال الرسالة</button>
+        </form>
+    </section>
+
+    <!-- الطابع الشخصي -->
+    <footer class="footer">
+        <p>&copy; 2026 Aiham Farea. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>
